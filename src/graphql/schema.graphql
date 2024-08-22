@@ -1,0 +1,31 @@
+"""
+Indicates exactly one field must be supplied and this field must not be `null`.
+"""
+directive @oneOf on INPUT_OBJECT
+
+type Query {
+  employees: [Employee!]!
+}
+
+type Employee {
+  id: ID!
+  fullName: String!
+  email: String!
+}
+
+type Mutation {
+  createEmployee(input: CreateEmployeeInput!): Employee!
+  deleteEmployee(id: Float!): Boolean!
+  updateEmployee(input: UpdateEmployeeInput!): Employee!
+}
+
+input CreateEmployeeInput {
+  fullName: String!
+  email: String!
+}
+
+input UpdateEmployeeInput {
+  id: ID!
+  fullName: String
+  email: String
+}

@@ -1,0 +1,1 @@
+export const isEmployee = (input: any) => input && 'id' in input && 'fullName' in input && 'email' in input
